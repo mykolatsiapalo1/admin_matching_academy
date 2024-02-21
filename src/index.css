@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6f6f6;
+  transition: background-color 0.3s
+}
+
+
+@layer base {
+  :root {
+    --color-bkg: 244deg 47% 20%;
+    --color-heading: 114 114 114;
+    --color-dark-bkg: 0deg 0% 17%;
+    --accent1: hsl(288 95.8% 90.6%);
+    --accent2: hsl(168 83.8% 78.2%);
+
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-bkg: 0deg 0% 17%;
+  --color-heading: 114 114 114;
+  --color-content: #2B2B2B;
+  --accent1: hsl(288 95.8% 90.6%);
+  --accent2: hsl(168 83.8% 78.2%);
+  --clr-bg-dark: #1f2937;
+  /* gray-800 */
+  --clr-bg-light: #fafafa;
+  /* zinc-50 */
+
+  --clr-text-dark: #1f2937;
+  /* gray-200 */
+  --clr-text-light: #fafafa;
+  /* zinc-50 */
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  /* display: block; */
+  /* margin: 15px auto; */
+  position: relative;
+  background: #FFF;
+  box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #FFF;
+    box-shadow: -24px 0 #1E1B4A, 24px 0 #FFF;
+  }
+
+  66% {
+    background: #1E1B4A;
+    box-shadow: -24px 0 #FFF, 24px 0 #FFF;
+  }
+
+  100% {
+    background: #FFF;
+    box-shadow: -24px 0 #FFF, 24px 0 #1E1B4A;
+  }
+}
