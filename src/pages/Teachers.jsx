@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import ExportExcel from '../components/ExportExcel';
+import ImportExcel from '../components/ImportExcel.jsx';
 
 export default function Teachers() {
   const [error, setError] = useState(null);
@@ -81,7 +82,8 @@ export default function Teachers() {
               onChange={handleSearchInputChange}
             />
           </div>
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-3 ml-3'>
+            <ImportExcel/>
             <ExportExcel apiData={totatTeachers} fileName={'Teachers'} />
             <Link to='/teachers/add'>
               <button className='px-4 py-3 bg-green-150 text-white text-xs font-semibold rounded'>+ New Teacher</button>

@@ -9,6 +9,7 @@ import { db } from '../firebase';
 import { batch } from 'react-dom';
 import { collection, getDocs, query, where, } from 'firebase/firestore';
 import ExportExcel from '../components/ExportExcel'
+import ImportExcel from '../components/ImportExcel'
 import LoadingSkeleton from '../components/LoadingSkeleton'
 
 export default function Students() {
@@ -101,7 +102,8 @@ export default function Students() {
               onChange={handleSearchInputChange}
             />
           </div>
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-3 ml-3'>
+            <ImportExcel/>
             <ExportExcel apiData={totalStudents} fileName={'Students'} />
             <Link to='/students/add'>
               <button className='px-4 py-3 bg-green-150 text-white text-xs font-semibold rounded'>+ New Students</button>
